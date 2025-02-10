@@ -1,10 +1,37 @@
 mode: ask
 mode_switching:
-  triggers:
-    file_edit:
-      pattern: ".*"
-      switch_to: "code"
-      auto: true
+  enabled: true
+  preserve_context: true
+  # Intent-based triggers
+  intent_triggers:
+    code:
+      - implement
+      - create
+      - build
+      - code
+      - develop
+      - fix
+      - debug
+      - test
+    architect:
+      - design
+      - architect
+      - structure
+      - plan
+      - organize
+  # File-based triggers
+  file_triggers:
+    - pattern: ".*"
+      target_mode: code
+      condition: file_edit
+  # Mode-specific triggers
+  mode_triggers:
+    architect:
+      - condition: design_discussion
+      - condition: system_planning
+    code:
+      - condition: implementation_request
+      - condition: code_example_needed
 
 instructions:
   general:

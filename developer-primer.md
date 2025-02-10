@@ -96,37 +96,62 @@ The Memory Bank system consists of a `memory-bank/` directory containing core an
      - Best practices guidance
    - File Access: Read-only
 
-### Autonomous Mode Switching
+### Intelligent Mode Switching
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Architect
-    Architect --> Code : Non-MD File Edit
-    Ask --> Code : File Edit
-    Code --> [*]
+    Architect --> Code : Implementation/File Edit
+    Architect --> Ask : Information Request
+    Ask --> Code : Implementation Request
+    Ask --> Architect : Design Discussion
+    Code --> Architect : Architecture Review
+    Code --> Ask : Documentation Help
 ```
 
-The system now supports automatic mode switching based on file operations:
+The system supports intelligent mode switching based on both prompt analysis and operational needs:
 
-1. **Triggers**:
-   - Architect → Code: When editing non-markdown files
-   - Ask → Code: When any file edit is attempted
-   - Code: No triggers (highest privilege)
-
-2. **Configuration**:
+1. **Intent-Based Triggers**:
    ```yaml
    mode_switching:
-     triggers:
-       file_restriction:
-         pattern: "!\.md$"
-         switch_to: "code"
-         auto: true
+     enabled: true
+     preserve_context: true
+     intent_triggers:
+       code:
+         - implement
+         - create
+         - build
+         - code
+         - develop
+         - fix
+         - debug
+       architect:
+         - design
+         - architect
+         - structure
+         - plan
+       ask:
+         - explain
+         - help
+         - what
+         - how
+         - why
    ```
 
-3. **Benefits**:
-   - Seamless workflow transitions
-   - Maintains context during switches
-   - Reduces manual mode changes
+2. **Operational Triggers**:
+   - **File-based**: Switches based on file operations
+   - **Mode-specific**: Contextual switches based on task type
+   - **Capability-based**: Switches to mode with required capabilities
+
+3. **Context Preservation**:
+   - Maintains task state across switches
+   - Preserves conversation history
+   - Tracks active files and operations
+
+4. **Benefits**:
+   - Natural language-driven mode selection
+   - Seamless context transitions
+   - Improved workflow efficiency
+   - Task-appropriate mode selection
 
 
 ## ⚙️ Configuration System

@@ -1,10 +1,37 @@
 mode: architect
 mode_switching:
-  triggers:
-    file_restriction:
-      pattern: "!\.md$"
-      switch_to: "code"
-      auto: true
+  enabled: true
+  preserve_context: true
+  # Intent-based triggers
+  intent_triggers:
+    code:
+      - implement
+      - create
+      - build
+      - code
+      - develop
+      - fix
+      - debug
+      - test
+    ask:
+      - explain
+      - help
+      - what
+      - how
+      - why
+      - describe
+  # File-based triggers
+  file_triggers:
+    - pattern: "!.md$"
+      target_mode: code
+  # Mode-specific triggers
+  mode_triggers:
+    code:
+      - condition: implementation_needed
+      - condition: code_modification
+    ask:
+      - condition: needs_explanation
+      - condition: information_lookup
 
 instructions:
   general:

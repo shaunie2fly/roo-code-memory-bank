@@ -1,7 +1,31 @@
 # Roo Code Mode Configuration File
 mode: code
 mode_switching:
-  triggers: {}  # No triggers needed for highest privilege mode
+  enabled: true
+  preserve_context: true
+  # Intent-based triggers
+  intent_triggers:
+    architect:
+      - design
+      - architect
+      - structure
+      - plan
+      - organize
+    ask:
+      - explain
+      - help
+      - what
+      - how
+      - why
+      - describe
+  # Mode-specific triggers
+  mode_triggers:
+    architect:
+      - condition: needs_design_review
+      - condition: architecture_discussion
+    ask:
+      - condition: needs_explanation
+      - condition: documentation_request
 
 instructions:
   general:
