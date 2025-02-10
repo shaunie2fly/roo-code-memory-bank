@@ -1,0 +1,15 @@
+# Ignore everything
+*
+
+
+# Don't ignore these specific files
+!/.gitignore
+!/README.md
+!/updates.md
+!/developer-primer.md
+!/.clinerules-architect
+!/.clinerules-ask
+!/.clinerules-code
+!/promt-settings-page.jpg
+
+# Don't ignore memory-bank directory and its contents
