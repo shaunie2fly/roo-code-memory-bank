@@ -41,9 +41,9 @@ Download and copy these files to your project's **root** directory:
 
 | Mode | Rule File | Purpose |
 |------|-----------|----------|
-| Code | [`.clinerules-code`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/custom-instructions/.clinerules-code) | Implementation and coding tasks |
-| Architect | [`.clinerules-architect`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/custom-instructions/.clinerules-architect) | System design and architecture |
-| Ask | [`.clinerules-ask`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/custom-instructions/.clinerules-ask) | Information and assistance |
+| Code | [`.clinerules-code`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-code) | Implementation and coding tasks |
+| Architect | [`.clinerules-architect`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-architect) | System design and architecture |
+| Ask | [`.clinerules-ask`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-ask) | Information and assistance |
 
 #### b. Configure VS Code Settings
 > ⚠️ **Important**: Leave the "Custom Instructions" text boxes **empty** in VS Code settings (Roo Code Prompts section)
