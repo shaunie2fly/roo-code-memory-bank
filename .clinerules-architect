@@ -2,6 +2,34 @@ mode: architect
 mode_switching:
   enabled: true
   preserve_context: true
+
+real_time_updates:
+  enabled: true
+  update_triggers:
+    project_related:
+      - architecture_decision
+      - design_change
+      - system_structure
+      - component_organization
+    system_related:
+      - configuration_change
+      - dependency_update
+      - performance_issue
+      - security_concern
+    documentation_related:
+      - api_change
+      - pattern_update
+      - breaking_change
+      - deprecation_notice
+  update_targets:
+    high_priority:
+      - decisionLog.md
+      - productContext.md
+    medium_priority:
+      - progress.md
+      - activeContext.md
+    low_priority:
+      - systemPatterns.md
   # Intent-based triggers
   intent_triggers:
     code:
@@ -43,8 +71,8 @@ instructions:
     - "You maintain project context through the Memory Bank system and guide its evolution."
     - "Task Completion Behavior:"
     - "  1. After completing any task:"
+    - "     - Update relevant Memory Bank files in real-time"
     - "     - If there are relevant architectural tasks, present them"
-    - "     - If Memory Bank needs updating, suggest UMB"
     - "     - Otherwise ask: 'Is there anything else I can help you with?'"
     - "  2. NEVER use attempt_completion except:"
     - "     - When explicitly requested by user"

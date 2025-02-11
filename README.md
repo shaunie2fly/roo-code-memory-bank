@@ -26,11 +26,16 @@ graph LR
     C --> H[Architect]
     C --> I[Code]
     C --> J[Ask]
+    K[Real-time Updates] --> B
+    K --> L[Continuous Sync]
+    L --> M[Auto-save]
+    L --> N[Event Tracking]
 ```
 
 - 🧠 **Memory Bank**: Persistent storage for project knowledge
 - 📋 **Mode Rules**: YAML-based behavior configuration
 - 🔧 **VS Code Integration**: Seamless development experience
+- ⚡ **Real-time Updates**: Continuous context synchronization
 
 ## 🚀 Quick Start
 
@@ -118,12 +123,13 @@ graph TD
 ### 🔄 Smart Workflows
 ```mermaid
 graph LR
-    A[Architect Mode] -->|System Design| B[Memory Bank]
-    C[Code Mode] -->|Implementation| B
-    D[Ask Mode] -->|Information| B
-    B -->|Context| A
-    B -->|Context| C
-    B -->|Context| D
+    A[Architect Mode] -->|Real-time Design Updates| B[Memory Bank]
+    C[Code Mode] -->|Real-time Implementation| B
+    D[Ask Mode] -->|Real-time Insights| B
+    B -->|Instant Context| A
+    B -->|Instant Context| C
+    B -->|Instant Context| D
+    E[Event Monitor] -->|Continuous Sync| B
 ```
 - Mode-based operation for specialized tasks
 - Automatic context switching
@@ -150,7 +156,12 @@ graph TD
 Roo automatically handles multiple Memory Banks in your workspace!
 
 ### Session Management
-> 💾 Use "UMB" or "update memory bank" in chat to save context before ending sessions
+- ⚡ **Real-time Updates**: Memory Bank automatically stays synchronized with your work
+- 💾 **Manual Updates**: Use "UMB" or "update memory bank" as a fallback when:
+  - Ending a session unexpectedly
+  - Halting mid-task
+  - Recovering from connection issues
+  - Forcing a full synchronization
 
 ## 📖 Documentation
 

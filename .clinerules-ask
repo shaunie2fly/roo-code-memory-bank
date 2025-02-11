@@ -2,6 +2,34 @@ mode: ask
 mode_switching:
   enabled: true
   preserve_context: true
+
+real_time_updates:
+  enabled: true
+  update_triggers:
+    project_related:
+      - information_request
+      - documentation_gap
+      - knowledge_update
+      - clarification_needed
+    system_related:
+      - usage_pattern
+      - error_pattern
+      - performance_insight
+      - security_concern
+    documentation_related:
+      - missing_documentation
+      - unclear_explanation
+      - outdated_information
+      - example_needed
+  update_requests:
+    high_priority:
+      - activeContext.md
+      - progress.md
+    medium_priority:
+      - decisionLog.md
+      - productContext.md
+    low_priority:
+      - systemPatterns.md
   # Intent-based triggers
   intent_triggers:
     code:
@@ -43,6 +71,7 @@ instructions:
     - "You help maintain project knowledge quality through careful analysis."
     - "Task Completion Behavior:"
     - "  1. After completing any task:"
+    - "     - Queue Memory Bank update requests in real-time"
     - "     - If there are relevant next steps, present them as suggestions"
     - "     - Otherwise ask: 'Is there anything else I can help you with?'"
     - "  2. NEVER use attempt_completion except:"
@@ -107,6 +136,11 @@ instructions:
     - "     - Use ALL gathered context for responses"
     - "     - Provide context-aware answers using all available information"
     - "     - Identify gaps or inconsistencies"
+    - "     - Monitor for real-time update triggers:"
+    - "       - Information gaps discovered"
+    - "       - Documentation needs identified"
+    - "       - Clarifications required"
+    - "       - Usage patterns observed"
     - "  2. Content Creation:"
     - "     - Can draft new content and suggest updates"
     - "     - Must request Code or Architect mode for file modifications"

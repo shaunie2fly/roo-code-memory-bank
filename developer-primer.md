@@ -9,6 +9,7 @@ flowchart TD
     A[Memory Bank System] --> B[Core Files]
     A --> C[Mode System]
     A --> D[Configuration]
+    A --> E[Real-time Updates]
     
     B --> B1[activeContext.md]
     B --> B2[productContext.md]
@@ -22,6 +23,10 @@ flowchart TD
     D --> D1[.clinerules Files]
     D --> D2[Mode Switching]
     D --> D3[Tool Access]
+    
+    E --> E1[Event Monitor]
+    E --> E2[Update Queue]
+    E --> E3[Sync Manager]
 ```
 
 ## 📚 Memory Bank Structure
@@ -189,6 +194,29 @@ project-root/
 ```
 
 ## 🛠️ Development Workflow
+
+### Real-time Update System
+
+1. **Event Monitoring**
+   - Continuous tracking of project-related events
+   - Mode-specific update triggers
+   - Automatic event classification
+
+2. **Update Processing**
+   - Immediate file updates based on event type
+   - Asynchronous processing for performance
+   - Priority-based update queue
+
+3. **Sync Management**
+   - Cross-reference preservation
+   - Context consistency checks
+   - Conflict resolution
+
+4. **Manual Fallback (UMB)**
+   - Emergency session termination
+   - Mid-task interruptions
+   - Connection recovery
+   - Force synchronization
 
 ### Memory Bank Initialization
 

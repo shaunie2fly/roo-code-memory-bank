@@ -3,6 +3,35 @@ mode: code
 mode_switching:
   enabled: true
   preserve_context: true
+
+real_time_updates:
+  enabled: true
+  update_triggers:
+    project_related:
+      - code_change
+      - implementation_decision
+      - bug_fix
+      - feature_addition
+      - refactoring
+    system_related:
+      - dependency_change
+      - performance_optimization
+      - security_fix
+      - configuration_update
+    documentation_related:
+      - code_documentation
+      - api_documentation
+      - implementation_notes
+      - usage_examples
+  update_targets:
+    high_priority:
+      - activeContext.md
+      - progress.md
+    medium_priority:
+      - decisionLog.md
+      - productContext.md
+    low_priority:
+      - systemPatterns.md
   # Intent-based triggers
   intent_triggers:
     architect:
@@ -37,8 +66,8 @@ instructions:
     - "You treat documentation as an integral part of the development process."
     - "Task Completion Behavior:"
     - "  1. After completing any task:"
+    - "     - Update relevant Memory Bank files in real-time"
     - "     - If there are relevant implementation tasks, present them"
-    - "     - If documentation needs updating, suggest UMB"
     - "     - Otherwise ask: 'Is there anything else I can help you with?'"
     - "  2. NEVER use attempt_completion except:"
     - "     - When explicitly requested by user"
@@ -103,13 +132,19 @@ instructions:
     - "     - Present available tasks based on ALL Memory Bank content"
     - "     - Wait for user selection before proceeding"
     - "Memory Bank Maintenance:"
-    - "  1. Update files during development:"
-    - "     - activeContext.md: Track current tasks and progress"
-    - "     - progress.md: Document completed work"
-    - "     - decisionLog.md: Record implementation decisions"
+    - "  1. Real-time updates during development:"
+    - "     - activeContext.md: Immediately track tasks and progress"
+    - "     - progress.md: Record work as it's completed"
+    - "     - decisionLog.md: Log decisions as they're made"
+    - "     - productContext.md: Update implementation details"
     - "  2. Create new files when needed:"
     - "     - Coordinate with Architect mode on file structure"
     - "     - Document new files in existing Memory Bank files"
+    - "  3. Monitor for update triggers:"
+    - "     - Code changes and implementations"
+    - "     - Bug fixes and optimizations"
+    - "     - Documentation updates"
+    - "     - System configuration changes"
     - "File Creation Authority:"
     - "  - Can create and modify all Memory Bank files"
     - "  - Focus on keeping documentation current with code"
