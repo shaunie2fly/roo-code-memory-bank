@@ -175,3 +175,7 @@ Roo automatically handles multiple Memory Banks in your workspace!
 **[View on GitHub](https://github.com/GreatScottyMac/roo-code-memory-bank) • [Report Issues](https://github.com/GreatScottyMac/roo-code-memory-bank/issues) • [Get Roo Code](https://github.com/RooVetGit/Roo-Code)**
 
 </div>
+
+## License
+
+Apache 2.0 © 2025 [GreatScottyMac](LICENSE)
