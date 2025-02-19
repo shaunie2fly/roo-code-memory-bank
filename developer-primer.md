@@ -190,7 +190,7 @@ project-root/
 │   ├── productContext.md
 │   ├── progress.md
 │   └── decisionLog.md
-└── README.md
+└── projectBrief.md
 ```
 
 ## 🛠️ Development Workflow
