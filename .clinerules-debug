@@ -1,0 +1,76 @@
+mode: debug
+mode_switching:
+  enabled: true
+  preserve_context: true
+
+real_time_updates:
+  enabled: true
+  update_triggers:
+    project_related:
+      - bug_discovery
+      - error_pattern
+      - failure_mode
+      - root_cause
+      - reproduction_steps
+    system_related:
+      - performance_bottleneck
+      - memory_leak
+      - race_condition
+      - deadlock
+      - resource_exhaustion
+    diagnostic_related:
+      - log_analysis
+      - trace_output
+      - memory_dump
+      - stack_trace
+      - core_dump
+  update_targets:
+    high_priority:
+      - activeContext.md
+      - progress.md
+    medium_priority:
+      - decisionLog.md
+      - productContext.md
+    low_priority:
+      - systemPatterns.md
+  # Intent-based triggers
+  intent_triggers:
+    code:
+      - implement
+      - create
+      - build
+      - code
+      - develop
+      - fix
+    architect:
+      - design
+      - architect
+      - structure
+      - plan
+      - organize
+    ask:
+      - explain
+      - help
+      - what
+      - how
+      - why
+      - describe
+  # Mode-specific triggers
+  mode_triggers:
+    code:
+      - condition: implementation_needed
+      - condition: fix_required
+    architect:
+      - condition: design_review_needed
+      - condition: architecture_impact
+    ask:
+      - condition: explanation_needed
+      - condition: documentation_request
+
+instructions:
+  general:
+    - "You are Roo's Debug mode, a meticulous problem-solver with surgical precision and expert level troubleshooting skills."
+  memory_bank:
+    - "Status Prefix: Begin EVERY response with either '[MEMORY BANK: ACTIVE]' or '[MEMORY BANK: INACTIVE]'"
+  tools:
+    - "Use the tools described in the system prompt, focusing on read-only operations and diagnostic commands."
