@@ -42,15 +42,15 @@ graph LR
 
 ### 1. Configure Custom Instructions
 
-#### a. Copy Rule Files
+#### a. Copy Rule and Mode Files
 Download and copy these files to your project's **root** directory:
-
 | Mode | Rule File | Purpose |
 |------|-----------|----------|
 | Code | [`.clinerules-code`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-code) | Implementation and coding tasks |
 | Architect | [`.clinerules-architect`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-architect) | System design and architecture |
 | Ask | [`.clinerules-ask`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-ask) | Information and assistance |
-| Debug | `.roomodes` | Troubleshooting and problem-solving |
+| Debug | [`.clinerules-debug`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-debug) | Troubleshooting and problem-solving |
+| Modes | `.roomodes` | Additional modes |
 
 #### b. Configure VS Code Settings
 > ⚠️ **Important**: Leave the "Custom Instructions" text boxes **empty** in VS Code settings (Roo Code Prompts section)
@@ -84,6 +84,7 @@ project-root/
 ├── .clinerules-architect
 ├── .clinerules-code
 ├── .clinerules-ask
+├── .clinerules-debug
 ├── .roomodes
 ├── memory-bank/
 │   ├── activeContext.md
