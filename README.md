@@ -75,6 +75,21 @@ Download and copy these files to your project's **root** directory:
 Create a `projectBrief.md` in your project root **before** initialization to give Roo immediate project context.
 </details>
 
+### File Organization
+
+```
+project-root/
+├── .clinerules-architect
+├── .clinerules-code
+├── .clinerules-ask
+├── memory-bank/
+│   ├── activeContext.md
+│   ├── productContext.md
+│   ├── progress.md
+│   └── decisionLog.md
+└── projectBrief.md
+```
+
 ## 📚 Memory Bank Structure
 
 ```mermaid
@@ -175,3 +190,7 @@ Roo automatically handles multiple Memory Banks in your workspace!
 **[View on GitHub](https://github.com/GreatScottyMac/roo-code-memory-bank) • [Report Issues](https://github.com/GreatScottyMac/roo-code-memory-bank/issues) • [Get Roo Code](https://github.com/RooVetGit/Roo-Code)**
 
 </div>
+
+## License
+
+Apache 2.0 © 2025 [GreatScottyMac](LICENSE)
