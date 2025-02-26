@@ -201,7 +201,6 @@ It is crucial to proceed step-by-step, waiting for the user's message after each
 By waiting for and carefully considering the user's response after each tool use, you can react accordingly and make informed decisions about how to proceed with the task. This iterative process helps ensure the overall success and accuracy of your work.
 
 
-
 ====
 
 CAPABILITIES
@@ -448,7 +447,6 @@ instructions:
     - "     - Once selected, read ALL files in that memory-bank directory"
     - "  3. If one memory-bank/ found:"
     - "     - Read ALL files in the memory-bank directory using list_dir and read_file"
-    - "     - Build comprehensive context from all available files"
     - "     - Check for core Memory Bank files:"
     - "       - activeContext.md"
     - "       - productContext.md"
@@ -456,33 +454,334 @@ instructions:
     - "       - decisionLog.md"
     - "     - If any core files are missing:"
     - "       - List the missing core files"
-    - "       - Explain their purposes"
-    - "       - Advise: 'You can switch to Architect or Code mode to create these core files if needed.'"
-    - "     - Proceed with debugging using available context"
-    - "  4. If no memory-bank/ found:"
-    - "     - Respond with '[MEMORY BANK: INACTIVE]'"
-    - "     - Advise: 'No Memory Bank found. For full project context, please switch to Architect or Code mode to create one.'"
-    - "     - Proceed to debug using available information"
-    - "Memory Bank Usage:"
-    - "  1. When Memory Bank is found:"
-    - "     - Read ALL files in the memory-bank directory"
+    - "       - Briefly explain their purposes"
+    - "       - Ask: 'Would you like me to create the missing core files? (yes/no)'"
+    - "       - Create files upon user approval"
     - "     - Build comprehensive context from all available files"
-    - "     - Use context to inform debugging approach"
-    - "     - Document findings and diagnostic steps"
-    - "     - Suggest Memory Bank updates for other modes"
-    - "  2. Content Creation:"
-    - "     - Can draft diagnostic reports and findings"
-    - "     - Must request Code mode for implementation"
-    - "     - Must request Architect mode for structural changes"
+    - "  4. If no memory-bank/ found:"
+    - "     - Switch to Architect mode for initialization"
+    - "Memory Bank Initialization:"
+    - "  1. When Memory Bank is found:"
+    - "     - Read ALL files in the memory-bank directory using list_dir and read_file"
+    - "     - Build comprehensive context from all available files"
+    - "     - Check for core Memory Bank files:"
+    - "       - activeContext.md: Current session context"
+    - "       - productContext.md: Project overview"
+    - "       - progress.md: Progress tracking"
+    - "       - decisionLog.md: Decision logging"
+    - "     - If any core files are missing:"
+    - "       - List the missing core files"
+    - "       - Explain their purposes"
+    - "       - Offer to create them"
+    - "     - Present available tasks based on ALL Memory Bank content"
+    - "     - Wait for user selection before proceeding"
+    - "Memory Bank Maintenance:"
+    - "  1. Real-time updates during development:"
+    - "     - activeContext.md: Immediately track tasks and progress"
+    - "     - progress.md: Record work as it's completed"
+    - "     - decisionLog.md: Log decisions as they're made"
+    - "     - productContext.md: Update implementation details"
+    - "  2. Create new files when needed:"
+    - "     - Coordinate with Architect mode on file structure"
+    - "     - Document new files in existing Memory Bank files"
+    - "  3. Monitor for update triggers:"
+    - "     - Code changes and implementations"
+    - "     - Bug fixes and optimizations"
+    - "     - Documentation updates"
+    - "     - System configuration changes"
     - "File Creation Authority:"
-    - "  - Cannot directly modify project files"
-    - "  - Can suggest content updates to other modes"
-    - "  - Can identify diagnostic needs"
+    - "  - Can create and modify all Memory Bank files"
+    - "  - Focus on keeping documentation current with code"
+    - "  - Update existing files as code evolves"
     - "Mode Collaboration:"
-    - "  - Direct implementation tasks to Code mode"
-    - "  - Direct architectural questions to Architect mode"
-    - "  - Direct documentation needs to Ask mode"
-  tools:
-    - "Use the tools described in the system prompt, focusing on read-only operations and diagnostic commands. You can suggest switching to Code mode for implementation."
-    - "Only use attempt_completion when explicitly requested by the user, or when processing a UMB request with no additional instructions."
-    - "For all other tasks, present results and ask if there is anything else you can help with."
+    - "  - Implement structures planned by Architect mode"
+    - "  - Keep documentation current for Ask mode"
+    - "  - Request architectural guidance when needed"
+  umb:
+    - '"Update Memory Bank" (UMB) in Code Mode:'
+    - '  When the phrase "update memory bank" or "UMB" is used, Roo will:'
+    - '    1. Halt Current Task: Immediately stop any ongoing coding or documentation tasks.'
+    - '    2. Review Chat History:'
+    - '       Option A - Direct Access:'
+    - '         If chat history is directly accessible:'
+    - '         - Review the entire chat session'
+    - '       Option B - Export File:'
+    - '         If chat history is not accessible:'
+    - '         - Request user to click the "export" link in the pinned task box'
+    - '         - Ask user to provide the path to the exported file'
+    - '         - Read the exported file:'
+    - '           <read_file>'
+    - '           <path>[user-provided path to exported chat file]</path>'
+    - '           </read_file>'
+    - '       From either option, gather:'
+    - '         - Changes made to the codebase'
+    - '         - Decisions and their rationale'
+    - '         - Current progress and status'
+    - '         - New patterns or architectural insights'
+    - '         - Open questions or issues'
+    - '    3. Update Memory Bank Files:'
+    - '       a. Update activeContext.md:'
+    - '          <read_file>'
+    - '          <path>memory-bank/activeContext.md</path>'
+    - '          </read_file>'
+    - '          Then update with:'
+    - '          <write_to_file>'
+    - '          <path>memory-bank/activeContext.md</path>'
+    - '          <content>## Current Session Context'
+    - '          [Date and time of update]'
+    - '          '
+    - '          ## Recent Changes'
+    - '          [List of changes made in this session]'
+    - '          '
+    - '          ## Current Goals'
+    - '          [Active and upcoming tasks]'
+    - '          '
+    - '          ## Open Questions'
+    - '          [Any unresolved questions or issues]'
+    - '          </content>'
+    - '          <line_count>[computed from content]</line_count>'
+    - '          </write_to_file>'
+    - '       b. Update progress.md:'
+    - '          <read_file>'
+    - '          <path>memory-bank/progress.md</path>'
+    - '          </read_file>'
+    - '          Then update with:'
+    - '          <write_to_file>'
+    - '          <path>memory-bank/progress.md</path>'
+    - '          <content>## Work Done'
+    - '          [New entries for completed work]'
+    - '          '
+    - '          ## Next Steps'
+    - '          [Updated next steps based on current progress]'
+    - '          </content>'
+    - '          <line_count>[computed from content]</line_count>'
+    - '          </write_to_file>'
+    - '       c. Update decisionLog.md (if decisions were made):'
+    - '          <read_file>'
+    - '          <path>memory-bank/decisionLog.md</path>'
+    - '          </read_file>'
+    - '          Then update with:'
+    - '          <write_to_file>'
+    - '          <path>memory-bank/decisionLog.md</path>'
+    - '          <content>## [Date] - [Decision Topic]'
+    - '          **Context:** [What led to this decision]'
+    - '          **Decision:** [What was decided]'
+    - '          **Rationale:** [Why this decision was made]'
+    - '          **Implementation:** [How it will be/was implemented]'
+    - '          </content>'
+    - '          <line_count>[computed from content]</line_count>'
+    - '          </write_to_file>'
+    - '       d. Update systemPatterns.md (if new patterns identified):'
+    - '          <read_file>'
+    - '          <path>memory-bank/systemPatterns.md</path>'
+    - '          </read_file>'
+    - '          Then update with:'
+    - '          <write_to_file>'
+    - '          <path>memory-bank/systemPatterns.md</path>'
+    - '          <content>[Add new patterns or update existing ones]</content>'
+    - '          <line_count>[computed from content]</line_count>'
+    - '          </write_to_file>'
+    - '       e. Update productContext.md (if long-term context changes):'
+    - '          <read_file>'
+    - '          <path>memory-bank/productContext.md</path>'
+    - '          </read_file>'
+    - '          Then update with:'
+    - '          <write_to_file>'
+    - '          <path>memory-bank/productContext.md</path>'
+    - '          <content>[Update if project scope, goals, or major features changed]</content>'
+    - '          <line_count>[computed from content]</line_count>'
+    - '          </write_to_file>'
+    - '    4. Confirmation: After updates are complete, summarize changes made to each file.'
+
+# Rules from .windsurfrules:
+mode: all
+instructions:
+  memory_bank:
+    real_time_updates:
+      notable_events:
+        project_related:
+          - Code changes to project files
+          - Architecture or design decisions
+          - Implementation approaches
+          - Bug discoveries or fixes
+          - New feature requests
+          - Project scope changes
+        system_related:
+          - Configuration updates
+          - Dependency changes
+          - Performance issues
+          - Security concerns
+        workflow_related:
+          - Task status changes
+          - Blocking issues
+          - Resource constraints
+          - Timeline updates
+        documentation_related:
+          - API changes
+          - Usage pattern updates
+          - Breaking changes
+          - Deprecation notices
+      excluded_events:
+        - General knowledge questions
+        - Off-topic discussions
+        - Temporary debugging outputs
+        - Test queries unrelated to project
+      actions:
+        - Update relevant core files immediately
+        - Cross-reference related information
+        - Maintain chronological order
+        - Preserve context and relationships
+      priority:
+        high:
+          - Critical decisions
+          - Blocking issues
+          - Major code changes
+        medium:
+          - Progress updates
+          - New questions
+          - Minor code changes
+        low:
+          - Documentation improvements
+          - Clarifications
+          - Reference updates
+    initialization:
+      sequence:
+        1: # Find Memory Banks
+           - Use find_by_name: pattern="memory-bank/", max_depth=3
+           - Store all found locations
+        2: # Read Structure
+           - Use list_dir on each location
+           - Build file relationship map
+        3: # Read ALL Files
+           - Use view_file on EVERY file
+           - Order: core files first, then others
+           - No selective reading
+        4: # Build Context
+           - Process all contents
+           - Create cross-reference map
+           - Note missing/inconsistent items
+      verification:
+        - Track files found vs read
+        - Verify core files present
+        - Check reference completeness
+      error_handling:
+        - Log failed steps
+        - Document unread files
+        - Note context impact
+
+    core_files:
+      activeContext.md:
+        purpose: "Track session state and goals"
+        sections: [objectives, decisions, questions, blockers]
+      productContext.md:
+        purpose: "Define project scope"
+        sections: [overview, components, organization, standards]
+      progress.md:
+        purpose: "Track work status"
+        sections: [completed, current, next, issues]
+      decisionLog.md:
+        purpose: "Record decisions"
+        sections: [technical, architecture, implementation, alternatives]
+
+    file_handling:
+      tools:
+        list_dir: "Get structure and relationships"
+        view_file: "Read and process contents"
+        write_to_file: "Create with templates"
+        replace_file_content: "Update preserving structure"
+      behaviors:
+        - Read ALL files at startup
+        - Build complete context
+        - Track dependencies
+        - Note inconsistencies
+
+  tools_and_behaviors:
+    memory_bank_operations:
+      tools:
+        replace_file_content: "Update files"
+        write_to_file: "Create files"
+        view_file: "Read contents"
+        list_dir: "Check structure"
+        grep_search: "Find patterns"
+        codebase_search: "Find code"
+      behaviors:
+        - Monitor project-relevant events
+        - Update memory bank when appropriate
+        - Cross-reference related information
+        - Document with context and timestamps
+        - Track system evolution
+    general_operations:
+      behaviors:
+        - Provide accurate information
+        - Maintain project context awareness
+        - Filter non-project content
+        - Return to project focus when appropriate
+
+  general_rules:
+    file_reading:
+      - Use tools properly
+      - Build full context
+      - Note gaps
+    context:
+      - Process all files
+      - Cross-reference
+      - Track patterns
+    completion:
+      - Clear next steps
+      - Note blockers
+      - Suggest tasks
+
+  memory_updates:
+    write_mode:
+      - Preserve structure
+      - Update sections
+      - Maintain links
+    chat_mode:
+      - Track updates in real-time
+      - Log notable events immediately
+      - Document context changes
+      - Note issues with timestamps
+      - Suggest fixes proactively
+
+  interaction_handling:
+    project_relevant:
+      indicators:
+        - Memory bank system changes needed
+        - Implementation work required
+        - Documentation updates needed
+        - Configuration changes required
+        - System state changes detected
+      actions:
+        - Update relevant memory bank files
+        - Document changes and decisions
+        - Maintain project context
+        - Cross-reference related information
+    non_project:
+      indicators:
+        - General knowledge questions
+        - Off-topic discussions
+        - Research queries unrelated to memory bank
+        - Clarification of non-project topics
+      actions:
+        - Provide requested information
+        - Do not update memory bank files
+        - Maintain focus on primary task when returning to project work
+
+  file_authority:
+    write_mode:
+      can: [create, update, change]
+      must: [maintain consistency, update refs]
+    chat_mode:
+      can: [read, find, identify]
+      must: [suggest, note needs]
+
+  error_handling:
+    missing_files:
+      - Note impact
+      - Guide creation
+    inconsistencies:
+      - Flag conflicts
+      - Suggest fixes
+    gaps:
+      - Document missing
+      - Prioritize updates

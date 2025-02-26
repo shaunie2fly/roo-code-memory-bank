@@ -42,15 +42,15 @@ graph LR
 
 ### 1. Configure Custom Instructions
 
-#### a. Copy Rule Files
+#### a. Copy Rule and Mode Files
 Download and copy these files to your project's **root** directory:
-
 | Mode | Rule File | Purpose |
 |------|-----------|----------|
 | Code | [`.clinerules-code`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-code) | Implementation and coding tasks |
 | Architect | [`.clinerules-architect`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-architect) | System design and architecture |
 | Ask | [`.clinerules-ask`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-ask) | Information and assistance |
-| Debug | [`.roomodes`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.roomodes) | Troubleshooting and problem-solving |
+| Debug | [`.clinerules-debug`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-debug) | Troubleshooting and problem-solving |
+| Modes | `.roomodes` | Additional modes |
 
 #### b. Configure VS Code Settings
 > ⚠️ **Important**: Leave the "Custom Instructions" text boxes **empty** in VS Code settings (Roo Code Prompts section)
@@ -84,6 +84,7 @@ project-root/
 ├── .clinerules-architect
 ├── .clinerules-code
 ├── .clinerules-ask
+├── .clinerules-debug
 ├── .roomodes
 ├── memory-bank/
 │   ├── activeContext.md
@@ -176,32 +177,43 @@ graph TD
 Roo automatically handles multiple Memory Banks in your workspace!
 
 ### Debug Mode
-Roo Code Memory Bank now includes a Debug mode for troubleshooting and problem-solving. This mode was added using a `.roomodes` file in the project root:
+Roo Code Memory Bank includes a powerful Debug mode for systematic troubleshooting and problem-solving. This mode operates with surgical precision, focusing on root cause analysis and evidence-based verification.
 
-```json
-{
-  "customModes": [
-    {
-      "slug": "debug",
-      "name": "Debug",
-      "roleDefinition": "You are Roo, a meticulous problem-solver with surgical precision...",
-      "groups": [
-        "read",
-        "command"
-      ]
-    }
-  ]
-}
+#### Key Capabilities
+- 🔍 **Non-destructive Investigation**: Read-only access ensures system integrity during analysis
+- 📊 **Diagnostic Tools**: Access to logging, tracing, and system analysis tools
+- 🔬 **Systematic Analysis**: Methodical problem investigation and isolation
+- 🎯 **Root Cause Identification**: Traces error propagation through all system layers
+- ✅ **Evidence-based Verification**: Validates findings through multiple checkpoints
+
+#### Real-time Update Triggers
+Debug mode actively monitors and updates Memory Bank files based on:
+- 🐛 Bug discoveries and error patterns
+- 💾 Memory leaks and resource issues
+- 🔄 Race conditions and deadlocks
+- 📈 Performance bottlenecks
+- 📝 Log analysis and trace outputs
+
+#### Memory Bank Integration
+```mermaid
+graph TD
+    A[Debug Mode] --> B[Analysis]
+    B --> C[Findings]
+    C --> D[Memory Bank Updates]
+    D --> E[activeContext.md]
+    D --> F[progress.md]
+    D --> G[decisionLog.md]
+    E --> H[Current Issues]
+    F --> I[Debug Progress]
+    G --> J[Solution Decisions]
 ```
 
-Debug mode provides:
-- Read-only access to files for safe analysis
-- Command execution for diagnostic tools
-- Systematic problem investigation
-- Root cause identification
-- Evidence-based verification
-
-Switch to Debug mode when you need to troubleshoot issues in your project.
+Switch to Debug mode when you need to:
+- Investigate system behavior
+- Analyze failure patterns
+- Isolate root causes
+- Verify fixes
+- Document debugging insights
 
 ### Session Management
 - ⚡ **Real-time Updates**: Memory Bank automatically stays synchronized with your work
