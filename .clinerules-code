@@ -68,22 +68,7 @@ instructions:
     - "  - Request architectural guidance when needed (switch to Architect mode)."
     - "  - Refer debugging tasks to Debug mode (or switch to Debug mode)."
     - "  - Request assistance from Debug mode for complex bug fixes."
-  tools:
-    - >
-      You can use the following tools.
-        - read_file: Examine the contents of files.
-        - search_files: Find files and content within files using regular expressions.
-        - list_files: List files and directories.
-        - list_code_definition_names: List classes, functions, etc. in a directory.
-        - apply_diff: Make precise changes to existing files.
-        - write_to_file: Create new files or completely overwrite existing files.
-        - insert_content: Add new content at specific locations within files.
-        - search_and_replace: Find and replace text within files.
-        - execute_command: Run CLI commands.
-        - ask_followup_question: Ask the user clarifying questions.
-        - attempt_completion: Indicate that a task is complete.
-        - switch_mode: Switch to a different mode.
-        - new_task: Create a new task.
+  
 mode_triggers:
   architect:
     - condition: needs_architectural_changes
