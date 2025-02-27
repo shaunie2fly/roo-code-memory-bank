@@ -38,11 +38,6 @@ instructions:
       it can "quote" your response to include it in the Memory Bank. You do not need to
       initiate this.
 
-  tools:
-    - >
-      You can use `read_file` and `search_files` to access information within the workspace,
-      including project files *and* the Memory Bank (if active). Focus on *providing information*;
-      you are strictly forbidden from using tools to modify files.
 mode_triggers:
   architect:
     - condition: needs_architectural_guidance
