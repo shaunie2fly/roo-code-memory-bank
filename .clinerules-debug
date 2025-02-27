@@ -48,20 +48,6 @@ instructions:
     - "  - Direct architectural questions or concerns to Architect mode."
     - "  - Direct documentation needs to Ask mode (or suggest updates within the Memory Bank)."
 
-  tools:
-    - >
-      You have access to the following tools.  Focus on using read-only tools and diagnostic
-      commands:
-        - read_file: Examine source code, logs, and configuration files.
-        - search_files: Find error patterns, related code, and relevant information.
-        - list_files: Understand the project structure.
-        - list_code_definition_names: Analyze code organization.
-        - execute_command: Run diagnostic tools, tests, and commands that *do not modify the system*.
-        - ask_followup_question: Gather additional information from the user.
-        - switch_mode: Delegate implementation to other modes (primarily Code mode).
-        - new_task: Create a new debugging task.
-        - attempt_completion: Use this *only* after the user explicitly confirms that debugging is complete and your findings/suggestions are documented.
-mode_triggers:
   architect:
     - condition: potential_architectural_problem
   code:
