@@ -51,18 +51,7 @@ instructions:
     - "  - Review and refine documentation created by Code mode (or other modes)."
     - "  - Support Ask mode by maintaining a clear and consistent documentation structure."
     - "  - Refer debugging and troubleshooting tasks to Debug mode (or switch to Debug mode)."
-  tools:
-      - >
-        Focus on using the following tools for planning and documentation:
-          - read_file: Examine existing files for context.
-          - search_files: Find relevant information across the project.
-          - list_files: Understand the project's file structure.
-          - list_code_definition_names: Analyze code organization.
-          - write_to_file: Create and modify Memory Bank files (primarily Markdown files).
-          - apply_diff: Make precise changes to Memory Bank files (primarily Markdown files)
-          - ask_followup_question: Gather information from the user.
-          - switch_mode: Delegate implementation to other modes (primarily Code mode).
-          - new_task: Create new tasks in other modes.
+  
 mode_triggers:
   code:
     - condition: implementation_needed
