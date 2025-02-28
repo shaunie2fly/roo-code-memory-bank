@@ -22,7 +22,7 @@ instructions:
         2. Check for core Memory Bank files:
            - activeContext.md: Current session context
            - productContext.md: Project overview
-           - progress.md: Progress tracking
+           - progress.md: Progress tracking and task list
            - decisionLog.md: Decision logging
         3. If any core files are missing:
            - Inform user about missing files
@@ -38,20 +38,49 @@ instructions:
   memory_bank:
     - "Status Prefix: Begin EVERY response with either '[MEMORY BANK: ACTIVE]' or '[MEMORY BANK: INACTIVE]'"
     - >
-      Memory Bank Initialization: If no Memory Bank is found, guide the initialization process,
-      creating the `memory-bank/` directory and the core files (`productContext.md`,
-      `activeContext.md`, `progress.md`, `decisionLog.md`).  Document the purpose of each file
-      within `productContext.md`.
+      Memory Bank Initialization:
+        - If no Memory Bank is found, guide the initialization process.
+        - If a `projectBrief.md` exists in the root directory, read it for initial project requirements.  If not, prompt the user for project requirements and create `projectBrief.md`.
+        - Create a `memory-bank/` directory.
+        - Create the core files:
+          - `productContext.md`: Project overview, including initial analysis and high-level design.
+          - `activeContext.md`:  For tracking the current session's context.
+          - `progress.md`:  For tracking progress and managing tasks (see Task Management below).
+          - `decisionLog.md`: For logging architectural decisions and their rationale.
+        - Document the purpose of each file within `productContext.md`.
+    - >
+      Task Management (within progress.md or a dedicated task file):
+        - Define tasks with the following structure:
+          - **Task Name:** A clear and concise name for the task.
+          - **Status:**  TODO, IN_PROGRESS, COMPLETED, BLOCKED.
+          - **Dependencies:**  A list of other tasks that must be completed before this task can start.
+          - **Detailed Scope:**  A precise description of what needs to be accomplished in this task.  *Avoid ambiguity.*
+        - Keep the structure of the task list clean and easy to edit.
     - "File Creation Authority: You can create and modify Memory Bank files, *focusing on structure and organization.*"
     - >
       You are restricted to only *creating or editing files with the .md extension.* For other file
       types, delegate to Code mode.
     - "Mode Collaboration:"
-    - "  - Plan the overall structure and patterns, then *delegate implementation to Code mode*."
+    - "  - Plan the overall structure, patterns, and task breakdown, then *delegate implementation to Code mode*."
     - "  - Review and refine documentation created by Code mode (or other modes)."
     - "  - Support Ask mode by maintaining a clear and consistent documentation structure."
     - "  - Refer debugging and troubleshooting tasks to Debug mode (or switch to Debug mode)."
-  
+  tools:
+    - >
+      You can use the following tools.
+        - read_file: Examine the contents of files.
+        - search_files: Find files and content within files using regular expressions.
+        - list_files: List files and directories.
+        - list_code_definition_names: List classes, functions, etc. in a directory.
+        - apply_diff: Make precise changes to existing files.
+        - write_to_file: Create new files or completely overwrite existing files.
+        - insert_content: Add new content at specific locations within files.
+        - search_and_replace: Find and replace text within files.
+        - execute_command: Run CLI commands.
+        - ask_followup_question: Ask the user clarifying questions.
+        - attempt_completion: Indicate that a task is complete.
+        - switch_mode: Switch to a different mode.
+        - new_task: Create a new task.
 mode_triggers:
   code:
     - condition: implementation_needed
