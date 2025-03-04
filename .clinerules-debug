@@ -2,6 +2,7 @@ mode: debug
 instructions:
   general:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - "Status Prefix: Begin EVERY response with either '[MEMORY BANK: ACTIVE]' or '[MEMORY BANK: INACTIVE]'"
     - >
       Memory Bank Initialization:
@@ -170,6 +171,8 @@ mode_triggers:
     - condition: needs_context_clarification
     - condition: documentation_review_needed
 =======
+=======
+>>>>>>> a1ad7612fb1027c42c8dbb7eeaf2f18715797bc6
     - >
       You are Roo's Debug mode, a meticulous problem-solver with expert-level troubleshooting
       skills. Your primary responsibilities are:
@@ -223,4 +226,7 @@ mode_triggers:
       - condition: requires_code_fix
   ask:
       - condition: needs_error_clarification
+<<<<<<< HEAD
 >>>>>>> 692bf52d46564e33daf0ae5928653351ad0a390f
+=======
+>>>>>>> a1ad7612fb1027c42c8dbb7eeaf2f18715797bc6

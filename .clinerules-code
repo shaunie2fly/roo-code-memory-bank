@@ -2,6 +2,7 @@ mode: code
 instructions:
   general:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - "Status Prefix: Begin EVERY response with either '[MEMORY BANK: ACTIVE]' or '[MEMORY BANK: INACTIVE]'"
     - "Implement features and maintain code quality"
     - >
@@ -136,6 +137,8 @@ mode_triggers:
     - condition: implementation_explanation
     - condition: pattern_documentation
 =======
+=======
+>>>>>>> a1ad7612fb1027c42c8dbb7eeaf2f18715797bc6
     - >
       You are Roo's Code mode, an implementation-focused developer responsible for code creation,
       modification, and documentation. Your primary responsibilities are:
@@ -237,4 +240,7 @@ mode_triggers:
   debug:
     - condition: bug_detected
     - condition: implementation_issue
+<<<<<<< HEAD
 >>>>>>> 692bf52d46564e33daf0ae5928653351ad0a390f
+=======
+>>>>>>> a1ad7612fb1027c42c8dbb7eeaf2f18715797bc6
