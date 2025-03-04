@@ -169,17 +169,165 @@ graph LR
 
 ## 💡 Pro Tips
 
-### Multiple Projects
+### Architect Mode
+Roo Code Memory Bank's Architect mode is designed for high-level system design and project organization. This mode focuses on architectural decisions, system structure, and maintaining project-wide consistency.
+
+#### Key Capabilities
+- 🏗️ **System Design**: Create and maintain architecture
+- 📐 **Pattern Definition**: Establish coding patterns and standards
+- 🔄 **Project Structure**: Organize code and resources
+- 📋 **Documentation**: Maintain technical documentation
+- 🤝 **Team Collaboration**: Guide implementation standards
+
+#### Real-time Update Triggers
+Architect mode actively monitors and updates Memory Bank files based on:
+- 🎯 Architectural decisions and changes
+- 📊 System pattern definitions
+- 🔄 Project structure updates
+- 📝 Documentation requirements
+- ⚡ Implementation guidance needs
+
+#### Memory Bank Integration
 ```mermaid
 graph TD
-    A[Workspace] --> B[Project 1]
-    A --> C[Project 2]
-    B --> D[memory-bank/]
-    C --> E[memory-bank/]
-    D --> F[Automatic Detection]
-    E --> F
+    A[Architect Mode] --> B[Design Decisions]
+    A --> C[Pattern Definition]
+    B --> D[Memory Bank Updates]
+    C --> D
+    D --> E[activeContext.md]
+    D --> F[progress.md]
+    D --> G[decisionLog.md]
+    E --> H[Design Status]
+    F --> I[Architecture Progress]
+    G --> J[Design Decisions]
 ```
-Roo automatically handles multiple Memory Banks in your workspace!
+
+Switch to Architect mode when you need to:
+- Design system architecture
+- Define coding patterns
+- Structure new projects
+- Guide implementations
+- Make architectural decisions
+
+### Code Mode
+Roo Code Memory Bank's Code mode is your primary interface for implementation and development. This mode specializes in writing, modifying, and maintaining code while following established patterns.
+
+#### Key Capabilities
+- 💻 **Code Creation**: Write new code and features
+- 🔧 **Code Modification**: Update existing implementations
+- 📚 **Documentation**: Add code comments and docs
+- ✨ **Quality Control**: Maintain code standards
+- 🔄 **Refactoring**: Improve code structure
+
+#### Real-time Update Triggers
+Code mode actively monitors and updates Memory Bank files based on:
+- 📝 Code implementations
+- 🔄 Feature updates
+- 🎯 Pattern applications
+- ⚡ Performance improvements
+- 📚 Documentation updates
+
+#### Memory Bank Integration
+```mermaid
+graph TD
+    A[Code Mode] --> B[Implementation]
+    A --> C[Documentation]
+    B --> D[Memory Bank Updates]
+    C --> D
+    D --> E[activeContext.md]
+    D --> F[progress.md]
+    D --> G[decisionLog.md]
+    E --> H[Current Tasks]
+    F --> I[Code Progress]
+    G --> J[Implementation Decisions]
+```
+
+Switch to Code mode when you need to:
+- Implement new features
+- Modify existing code
+- Add documentation
+- Apply coding patterns
+- Refactor code
+
+### Ask Mode
+Roo Code Memory Bank's Ask mode serves as your knowledge base interface and documentation assistant. This mode excels at providing information, explaining concepts, and maintaining project knowledge.
+
+#### Key Capabilities
+- 💡 **Knowledge Sharing**: Access project insights
+- 📚 **Documentation**: Create and update docs
+- 🔍 **Code Explanation**: Clarify implementations
+- 🤝 **Collaboration**: Share understanding
+- 📖 **Pattern Education**: Explain system patterns
+
+#### Real-time Update Triggers
+Ask mode actively monitors and updates Memory Bank files based on:
+- ❓ Knowledge requests
+- 📝 Documentation needs
+- 🔄 Pattern explanations
+- 💡 Implementation insights
+- 📚 Learning outcomes
+
+#### Memory Bank Integration
+```mermaid
+graph TD
+    A[Ask Mode] --> B[Knowledge Sharing]
+    A --> C[Documentation]
+    B --> D[Memory Bank Updates]
+    C --> D
+    D --> E[activeContext.md]
+    D --> F[progress.md]
+    D --> G[decisionLog.md]
+    E --> H[Current Topics]
+    F --> I[Documentation Progress]
+    G --> J[Knowledge Decisions]
+```
+
+Switch to Ask mode when you need to:
+- Understand code patterns
+- Get implementation guidance
+- Create documentation
+- Share knowledge
+- Learn system concepts
+
+### Debug Mode
+Roo Code Memory Bank's Debug mode specializes in systematic problem-solving and troubleshooting. This mode employs strategic analysis and verification to identify and resolve issues.
+
+#### Key Capabilities
+- 🔍 **Issue Investigation**: Analyze problems systematically
+- 📊 **Error Analysis**: Track error patterns
+- 🎯 **Root Cause Finding**: Identify core issues
+- ✅ **Solution Verification**: Validate fixes
+- 📝 **Problem Documentation**: Record findings
+
+#### Real-time Update Triggers
+Debug mode actively monitors and updates Memory Bank files based on:
+- 🐛 Bug discoveries
+- 📈 Performance issues
+- 🔄 Error patterns
+- ⚡ System bottlenecks
+- 📝 Fix verifications
+
+#### Memory Bank Integration
+```mermaid
+graph TD
+    A[Debug Mode] --> B[Investigation]
+    A --> C[Analysis]
+    B --> D[Memory Bank Updates]
+    C --> D
+    D --> E[activeContext.md]
+    D --> F[progress.md]
+    D --> G[decisionLog.md]
+    E --> H[Current Issues]
+    F --> I[Debug Progress]
+    G --> J[Solution Decisions]
+```
+
+Switch to Debug mode when you need to:
+- Investigate issues
+- Analyze errors
+- Find root causes
+- Verify fixes
+- Document problems
 
 ### Test Mode
 Roo Code Memory Bank includes a powerful Test mode for test-driven development and quality assurance. This mode operates with a focus on test creation, execution, and validation while maintaining code quality.
@@ -220,9 +368,6 @@ Switch to Test mode when you need to:
 - Analyze test coverage
 - Validate code quality
 - Document test results
-
-### Debug Mode
-[Debug mode section remains unchanged]
 
 ### Session Management
 - ⚡ **Real-time Updates**: Memory Bank automatically stays synchronized with your work
