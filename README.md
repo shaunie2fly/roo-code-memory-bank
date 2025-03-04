@@ -1,4 +1,8 @@
 <div align="center">
+    
+### 🚨Major [Update](https://github.com/GreatScottyMac/RooFlow) Coming Soon!🚨
+
+<br>
 
 # 🧠 Roo Code Memory Bank
 
@@ -26,6 +30,7 @@ graph LR
     C --> H[Architect]
     C --> I[Code]
     C --> J[Ask]
+    C --> K1[Debug]
     K[Real-time Updates] --> B
     K --> L[Continuous Sync]
     L --> M[Auto-save]
@@ -41,14 +46,14 @@ graph LR
 
 ### 1. Configure Custom Instructions
 
-#### a. Copy Rule Files
+#### a. Copy Rule and Mode Files
 Download and copy these files to your project's **root** directory:
-
 | Mode | Rule File | Purpose |
 |------|-----------|----------|
 | Code | [`.clinerules-code`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-code) | Implementation and coding tasks |
 | Architect | [`.clinerules-architect`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-architect) | System design and architecture |
 | Ask | [`.clinerules-ask`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-ask) | Information and assistance |
+| Debug | [`.clinerules-debug`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-debug) | Troubleshooting and problem-solving |
 
 #### b. Configure VS Code Settings
 > ⚠️ **Important**: Leave the "Custom Instructions" text boxes **empty** in VS Code settings (Roo Code Prompts section)
@@ -74,6 +79,22 @@ Download and copy these files to your project's **root** directory:
 
 Create a `projectBrief.md` in your project root **before** initialization to give Roo immediate project context.
 </details>
+
+### File Organization
+
+```
+project-root/
+├── .clinerules-architect
+├── .clinerules-code
+├── .clinerules-ask
+├── .clinerules-debug
+├── memory-bank/
+│   ├── activeContext.md
+│   ├── productContext.md
+│   ├── progress.md
+│   └── decisionLog.md
+└── projectBrief.md
+```
 
 ## 📚 Memory Bank Structure
 
@@ -126,9 +147,11 @@ graph LR
     A[Architect Mode] -->|Real-time Design Updates| B[Memory Bank]
     C[Code Mode] -->|Real-time Implementation| B
     D[Ask Mode] -->|Real-time Insights| B
+    F[Debug Mode] -->|Real-time Analysis| B
     B -->|Instant Context| A
     B -->|Instant Context| C
     B -->|Instant Context| D
+    B -->|Instant Context| F
     E[Event Monitor] -->|Continuous Sync| B
 ```
 - Mode-based operation for specialized tasks
@@ -154,6 +177,45 @@ graph TD
     E --> F
 ```
 Roo automatically handles multiple Memory Banks in your workspace!
+
+### Debug Mode
+Roo Code Memory Bank includes a powerful Debug mode for systematic troubleshooting and problem-solving. This mode operates with surgical precision, focusing on root cause analysis and evidence-based verification.
+
+#### Key Capabilities
+- 🔍 **Non-destructive Investigation**: Read-only access ensures system integrity during analysis
+- 📊 **Diagnostic Tools**: Access to logging, tracing, and system analysis tools
+- 🔬 **Systematic Analysis**: Methodical problem investigation and isolation
+- 🎯 **Root Cause Identification**: Traces error propagation through all system layers
+- ✅ **Evidence-based Verification**: Validates findings through multiple checkpoints
+
+#### Real-time Update Triggers
+Debug mode actively monitors and updates Memory Bank files based on:
+- 🐛 Bug discoveries and error patterns
+- 💾 Memory leaks and resource issues
+- 🔄 Race conditions and deadlocks
+- 📈 Performance bottlenecks
+- 📝 Log analysis and trace outputs
+
+#### Memory Bank Integration
+```mermaid
+graph TD
+    A[Debug Mode] --> B[Analysis]
+    B --> C[Findings]
+    C --> D[Memory Bank Updates]
+    D --> E[activeContext.md]
+    D --> F[progress.md]
+    D --> G[decisionLog.md]
+    E --> H[Current Issues]
+    F --> I[Debug Progress]
+    G --> J[Solution Decisions]
+```
+
+Switch to Debug mode when you need to:
+- Investigate system behavior
+- Analyze failure patterns
+- Isolate root causes
+- Verify fixes
+- Document debugging insights
 
 ### Session Management
 - ⚡ **Real-time Updates**: Memory Bank automatically stays synchronized with your work
