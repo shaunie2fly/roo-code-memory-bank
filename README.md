@@ -31,6 +31,7 @@ graph LR
     C --> I[Code]
     C --> J[Ask]
     C --> K1[Debug]
+    C --> K2[Test]
     K[Real-time Updates] --> B
     K --> L[Continuous Sync]
     L --> M[Auto-save]
@@ -54,6 +55,9 @@ Download and copy these files to your project's **root** directory:
 | Architect | [`.clinerules-architect`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-architect) | System design and architecture |
 | Ask | [`.clinerules-ask`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-ask) | Information and assistance |
 | Debug | [`.clinerules-debug`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-debug) | Troubleshooting and problem-solving |
+| Test | [`.clinerules-test`]() | Test-driven development and quality assurance |
+
+> 📝 **Special Note for Test Mode**: Test mode requires both the `.clinerules-test` file AND `.roomodes` file in your project root for proper functionality.
 
 #### b. Configure VS Code Settings
 > ⚠️ **Important**: Leave the "Custom Instructions" text boxes **empty** in VS Code settings (Roo Code Prompts section)
@@ -88,6 +92,8 @@ project-root/
 ├── .clinerules-code
 ├── .clinerules-ask
 ├── .clinerules-debug
+├── .clinerules-test
+├── .roomodes
 ├── memory-bank/
 │   ├── activeContext.md
 │   ├── productContext.md
@@ -148,10 +154,12 @@ graph LR
     C[Code Mode] -->|Real-time Implementation| B
     D[Ask Mode] -->|Real-time Insights| B
     F[Debug Mode] -->|Real-time Analysis| B
+    G[Test Mode] -->|Real-time Testing| B
     B -->|Instant Context| A
     B -->|Instant Context| C
     B -->|Instant Context| D
     B -->|Instant Context| F
+    B -->|Instant Context| G
     E[Event Monitor] -->|Continuous Sync| B
 ```
 - Mode-based operation for specialized tasks
@@ -178,44 +186,48 @@ graph TD
 ```
 Roo automatically handles multiple Memory Banks in your workspace!
 
-### Debug Mode
-Roo Code Memory Bank includes a powerful Debug mode for systematic troubleshooting and problem-solving. This mode operates with surgical precision, focusing on root cause analysis and evidence-based verification.
+### Test Mode
+Roo Code Memory Bank includes a powerful Test mode for test-driven development and quality assurance. This mode operates with a focus on test creation, execution, and validation while maintaining code quality.
 
 #### Key Capabilities
-- 🔍 **Non-destructive Investigation**: Read-only access ensures system integrity during analysis
-- 📊 **Diagnostic Tools**: Access to logging, tracing, and system analysis tools
-- 🔬 **Systematic Analysis**: Methodical problem investigation and isolation
-- 🎯 **Root Cause Identification**: Traces error propagation through all system layers
-- ✅ **Evidence-based Verification**: Validates findings through multiple checkpoints
+- 🧪 **Test-Driven Development**: Write tests before implementation
+- 📊 **Test Execution**: Run and monitor test suites
+- 🔍 **Coverage Analysis**: Track and improve test coverage
+- 🎯 **Quality Assurance**: Validate code against requirements
+- ✅ **Test Result Management**: Track and report test outcomes
 
 #### Real-time Update Triggers
-Debug mode actively monitors and updates Memory Bank files based on:
-- 🐛 Bug discoveries and error patterns
-- 💾 Memory leaks and resource issues
-- 🔄 Race conditions and deadlocks
-- 📈 Performance bottlenecks
-- 📝 Log analysis and trace outputs
+Test mode actively monitors and updates Memory Bank files based on:
+- 🔄 Test executions and results
+- 📈 Coverage metrics and gaps
+- 🐛 Test failure patterns
+- ✨ New test requirements
+- 📝 Test documentation needs
 
 #### Memory Bank Integration
 ```mermaid
 graph TD
-    A[Debug Mode] --> B[Analysis]
-    B --> C[Findings]
-    C --> D[Memory Bank Updates]
+    A[Test Mode] --> B[Test Creation]
+    A --> C[Test Execution]
+    B --> D[Memory Bank Updates]
+    C --> D
     D --> E[activeContext.md]
     D --> F[progress.md]
     D --> G[decisionLog.md]
-    E --> H[Current Issues]
-    F --> I[Debug Progress]
-    G --> J[Solution Decisions]
+    E --> H[Test Status]
+    F --> I[Test Progress]
+    G --> J[Test Decisions]
 ```
 
-Switch to Debug mode when you need to:
-- Investigate system behavior
-- Analyze failure patterns
-- Isolate root causes
-- Verify fixes
-- Document debugging insights
+Switch to Test mode when you need to:
+- Write new tests
+- Run test suites
+- Analyze test coverage
+- Validate code quality
+- Document test results
+
+### Debug Mode
+[Debug mode section remains unchanged]
 
 ### Session Management
 - ⚡ **Real-time Updates**: Memory Bank automatically stays synchronized with your work
