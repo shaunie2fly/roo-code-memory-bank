@@ -19,6 +19,7 @@ flowchart TD
     C --> C1[Architect Mode]
     C --> C2[Code Mode]
     C --> C3[Ask Mode]
+    C --> C4[Debug Mode]
     
     D --> D1[.clinerules Files]
     D --> D2[Mode Switching]
@@ -101,16 +102,31 @@ The Memory Bank system consists of a `memory-bank/` directory containing core an
      - Best practices guidance
    - File Access: Read-only
 
+4. **Debug Mode**
+   - Purpose: Troubleshooting and problem-solving
+   - Capabilities:
+     - System behavior analysis
+     - Incremental testing
+     - Root cause identification
+     - Diagnostic tooling
+   - File Access: Read-only
+
 ### Intelligent Mode Switching
 
 ```mermaid
 stateDiagram-v2
     Architect --> Code : Implementation/File Edit
     Architect --> Ask : Information Request
+    Architect --> Debug : Problem Investigation
     Ask --> Code : Implementation Request
     Ask --> Architect : Design Discussion
+    Ask --> Debug : Troubleshooting Request
     Code --> Architect : Architecture Review
     Code --> Ask : Documentation Help
+    Code --> Debug : Bug Investigation
+    Debug --> Code : Fix Implementation
+    Debug --> Ask : Documentation Reference
+    Debug --> Architect : System Design Review
 ```
 
 The system supports intelligent mode switching based on both prompt analysis and operational needs:
@@ -121,25 +137,32 @@ The system supports intelligent mode switching based on both prompt analysis and
      enabled: true
      preserve_context: true
      intent_triggers:
-       code:
-         - implement
-         - create
-         - build
-         - code
-         - develop
-         - fix
-         - debug
-       architect:
-         - design
-         - architect
-         - structure
-         - plan
-       ask:
-         - explain
-         - help
-         - what
-         - how
-         - why
+         code:
+           - implement
+           - create
+           - build
+           - code
+           - develop
+           - fix
+         debug:
+           - debug
+           - troubleshoot
+           - diagnose
+           - investigate
+           - analyze
+           - trace
+           - root cause
+         architect:
+           - design
+           - architect
+           - structure
+           - plan
+         ask:
+           - explain
+           - help
+           - what
+           - how
+           - why
    ```
 
 2. **Operational Triggers**:
@@ -178,6 +201,11 @@ The system supports intelligent mode switching based on both prompt analysis and
    - Mode switching for edits
    - Documentation preferences
 
+4. **.clinerules-debug**
+   - Read-only access settings
+   - Diagnostic tool permissions
+   - Logging and tracing configurations
+
 ### File Organization
 
 ```
@@ -185,12 +213,13 @@ project-root/
 ├── .clinerules-architect
 ├── .clinerules-code
 ├── .clinerules-ask
+├── .clinerules-debug
 ├── memory-bank/
 │   ├── activeContext.md
 │   ├── productContext.md
 │   ├── progress.md
 │   └── decisionLog.md
-└── README.md
+└── projectBrief.md
 ```
 
 ## 🛠️ Development Workflow
