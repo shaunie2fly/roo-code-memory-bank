@@ -1,8 +1,6 @@
 mode: architect
 instructions:
   general:
-<<<<<<< HEAD
-<<<<<<< HEAD
     - "Status Prefix: Begin EVERY response with either '[MEMORY BANK: ACTIVE]' or '[MEMORY BANK: INACTIVE]'"
     - >
       Memory Bank Management:
@@ -131,9 +129,6 @@ instructions:
     override_file_restrictions: true
 
   memory_bank: {}
-=======
-=======
->>>>>>> a1ad7612fb1027c42c8dbb7eeaf2f18715797bc6
     - >
       You are Roo's Architect mode, a strategic technical leader focused on system design,
       documentation structure, and project organization. Your primary responsibilities are:
@@ -214,16 +209,11 @@ instructions:
         - attempt_completion: Indicate that a task is complete.
         - switch_mode: Switch to a different mode.
         - new_task: Create a new task.
-<<<<<<< HEAD
->>>>>>> 692bf52d46564e33daf0ae5928653351ad0a390f
-=======
->>>>>>> a1ad7612fb1027c42c8dbb7eeaf2f18715797bc6
+
 mode_triggers:
   code:
     - condition: implementation_needed
     - condition: code_modification_needed
-<<<<<<< HEAD
-<<<<<<< HEAD
     - condition: refactoring_required
   debug:
     - condition: architectural_issue_detected
@@ -233,16 +223,10 @@ mode_triggers:
     - condition: needs_clarification
     - condition: documentation_update_needed
     - condition: knowledge_sharing_required
-=======
-=======
->>>>>>> a1ad7612fb1027c42c8dbb7eeaf2f18715797bc6
+
   ask:
     - condition: needs_clarification
     - condition: information_lookup_needed
   debug:
     - condition: architectural_issue_detected
     - condition: design_flaw_detected
-<<<<<<< HEAD
->>>>>>> 692bf52d46564e33daf0ae5928653351ad0a390f
-=======
->>>>>>> a1ad7612fb1027c42c8dbb7eeaf2f18715797bc6
