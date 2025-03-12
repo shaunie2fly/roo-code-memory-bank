@@ -1,4 +1,8 @@
 <div align="center">
+    
+### 🚨Major [Update](https://github.com/GreatScottyMac/RooFlow) Coming Soon!🚨
+
+<br>
 
 # 🧠 Roo Code Memory Bank
 
@@ -27,6 +31,7 @@ graph LR
     C --> I[Code]
     C --> J[Ask]
     C --> K1[Debug]
+    C --> K2[Test]
     K[Real-time Updates] --> B
     K --> L[Continuous Sync]
     L --> M[Auto-save]
@@ -50,15 +55,13 @@ Download and copy these files to your project's **root** directory:
 | Architect | [`.clinerules-architect`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-architect) | System design and architecture |
 | Ask | [`.clinerules-ask`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-ask) | Information and assistance |
 | Debug | [`.clinerules-debug`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-debug) | Troubleshooting and problem-solving |
+| Test | [`.clinerules-test`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-test) | Test-driven development and quality assurance |
+| Mode | [`.roomodes`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.roomodes) | Custom mode configuration file for Test mode |
 
-#### b. Configure VS Code Settings
-> ⚠️ **Important**: Leave the "Custom Instructions" text boxes **empty** in VS Code settings (Roo Code Prompts section)
+> 📝 **Special Note for Test Mode**: Test mode requires both the [`.clinerules-test`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-test) file AND [`.roomodes`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.roomodes) file in your project root for proper functionality.
 
-<details>
-<summary>📷 View Settings Screenshot</summary>
-
-![Roo Code Settings](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/promt-settings-page.jpg)
-</details>
+#### b. Configure Roo Code Prompt Settings
+> ⚠️ **Important**: The system default descriptions in the Role Definition boxes can remain but leave the Mode-specific Custom Instructions boxes empty.  
 
 ### 2. Initialize Memory Bank
 
@@ -84,6 +87,8 @@ project-root/
 ├── .clinerules-code
 ├── .clinerules-ask
 ├── .clinerules-debug
+├── .clinerules-test
+├── .roomodes
 ├── memory-bank/
 │   ├── activeContext.md
 │   ├── productContext.md
@@ -144,10 +149,12 @@ graph LR
     C[Code Mode] -->|Real-time Implementation| B
     D[Ask Mode] -->|Real-time Insights| B
     F[Debug Mode] -->|Real-time Analysis| B
+    G[Test Mode] -->|Real-time Testing| B
     B -->|Instant Context| A
     B -->|Instant Context| C
     B -->|Instant Context| D
     B -->|Instant Context| F
+    B -->|Instant Context| G
     E[Event Monitor] -->|Continuous Sync| B
 ```
 - Mode-based operation for specialized tasks
@@ -162,42 +169,151 @@ graph LR
 
 ## 💡 Pro Tips
 
-### Multiple Projects
-```mermaid
-graph TD
-    A[Workspace] --> B[Project 1]
-    A --> C[Project 2]
-    B --> D[memory-bank/]
-    C --> E[memory-bank/]
-    D --> F[Automatic Detection]
-    E --> F
-```
-Roo automatically handles multiple Memory Banks in your workspace!
-
-### Debug Mode
-Roo Code Memory Bank includes a powerful Debug mode for systematic troubleshooting and problem-solving. This mode operates with surgical precision, focusing on root cause analysis and evidence-based verification.
+### Architect Mode
+Roo Code Memory Bank's Architect mode is designed for high-level system design and project organization. This mode focuses on architectural decisions, system structure, and maintaining project-wide consistency.
 
 #### Key Capabilities
-- 🔍 **Non-destructive Investigation**: Read-only access ensures system integrity during analysis
-- 📊 **Diagnostic Tools**: Access to logging, tracing, and system analysis tools
-- 🔬 **Systematic Analysis**: Methodical problem investigation and isolation
-- 🎯 **Root Cause Identification**: Traces error propagation through all system layers
-- ✅ **Evidence-based Verification**: Validates findings through multiple checkpoints
+- 🏗️ **System Design**: Create and maintain architecture
+- 📐 **Pattern Definition**: Establish coding patterns and standards
+- 🔄 **Project Structure**: Organize code and resources
+- 📋 **Documentation**: Maintain technical documentation
+- 🤝 **Team Collaboration**: Guide implementation standards
 
 #### Real-time Update Triggers
-Debug mode actively monitors and updates Memory Bank files based on:
-- 🐛 Bug discoveries and error patterns
-- 💾 Memory leaks and resource issues
-- 🔄 Race conditions and deadlocks
-- 📈 Performance bottlenecks
-- 📝 Log analysis and trace outputs
+Architect mode actively monitors and updates Memory Bank files based on:
+- 🎯 Architectural decisions and changes
+- 📊 System pattern definitions
+- 🔄 Project structure updates
+- 📝 Documentation requirements
+- ⚡ Implementation guidance needs
 
 #### Memory Bank Integration
 ```mermaid
 graph TD
-    A[Debug Mode] --> B[Analysis]
-    B --> C[Findings]
-    C --> D[Memory Bank Updates]
+    A[Architect Mode] --> B[Design Decisions]
+    A --> C[Pattern Definition]
+    B --> D[Memory Bank Updates]
+    C --> D
+    D --> E[activeContext.md]
+    D --> F[progress.md]
+    D --> G[decisionLog.md]
+    E --> H[Design Status]
+    F --> I[Architecture Progress]
+    G --> J[Design Decisions]
+```
+
+Switch to Architect mode when you need to:
+- Design system architecture
+- Define coding patterns
+- Structure new projects
+- Guide implementations
+- Make architectural decisions
+
+### Code Mode
+Roo Code Memory Bank's Code mode is your primary interface for implementation and development. This mode specializes in writing, modifying, and maintaining code while following established patterns.
+
+#### Key Capabilities
+- 💻 **Code Creation**: Write new code and features
+- 🔧 **Code Modification**: Update existing implementations
+- 📚 **Documentation**: Add code comments and docs
+- ✨ **Quality Control**: Maintain code standards
+- 🔄 **Refactoring**: Improve code structure
+
+#### Real-time Update Triggers
+Code mode actively monitors and updates Memory Bank files based on:
+- 📝 Code implementations
+- 🔄 Feature updates
+- 🎯 Pattern applications
+- ⚡ Performance improvements
+- 📚 Documentation updates
+
+#### Memory Bank Integration
+```mermaid
+graph TD
+    A[Code Mode] --> B[Implementation]
+    A --> C[Documentation]
+    B --> D[Memory Bank Updates]
+    C --> D
+    D --> E[activeContext.md]
+    D --> F[progress.md]
+    D --> G[decisionLog.md]
+    E --> H[Current Tasks]
+    F --> I[Code Progress]
+    G --> J[Implementation Decisions]
+```
+
+Switch to Code mode when you need to:
+- Implement new features
+- Modify existing code
+- Add documentation
+- Apply coding patterns
+- Refactor code
+
+### Ask Mode
+Roo Code Memory Bank's Ask mode serves as your knowledge base interface and documentation assistant. This mode excels at providing information, explaining concepts, and maintaining project knowledge.
+
+#### Key Capabilities
+- 💡 **Knowledge Sharing**: Access project insights
+- 📚 **Documentation**: Create and update docs
+- 🔍 **Code Explanation**: Clarify implementations
+- 🤝 **Collaboration**: Share understanding
+- 📖 **Pattern Education**: Explain system patterns
+
+#### Real-time Update Triggers
+Ask mode actively monitors and updates Memory Bank files based on:
+- ❓ Knowledge requests
+- 📝 Documentation needs
+- 🔄 Pattern explanations
+- 💡 Implementation insights
+- 📚 Learning outcomes
+
+#### Memory Bank Integration
+```mermaid
+graph TD
+    A[Ask Mode] --> B[Knowledge Sharing]
+    A --> C[Documentation]
+    B --> D[Memory Bank Updates]
+    C --> D
+    D --> E[activeContext.md]
+    D --> F[progress.md]
+    D --> G[decisionLog.md]
+    E --> H[Current Topics]
+    F --> I[Documentation Progress]
+    G --> J[Knowledge Decisions]
+```
+
+Switch to Ask mode when you need to:
+- Understand code patterns
+- Get implementation guidance
+- Create documentation
+- Share knowledge
+- Learn system concepts
+
+### Debug Mode
+Roo Code Memory Bank's Debug mode specializes in systematic problem-solving and troubleshooting. This mode employs strategic analysis and verification to identify and resolve issues.
+
+#### Key Capabilities
+- 🔍 **Issue Investigation**: Analyze problems systematically
+- 📊 **Error Analysis**: Track error patterns
+- 🎯 **Root Cause Finding**: Identify core issues
+- ✅ **Solution Verification**: Validate fixes
+- 📝 **Problem Documentation**: Record findings
+
+#### Real-time Update Triggers
+Debug mode actively monitors and updates Memory Bank files based on:
+- 🐛 Bug discoveries
+- 📈 Performance issues
+- 🔄 Error patterns
+- ⚡ System bottlenecks
+- 📝 Fix verifications
+
+#### Memory Bank Integration
+```mermaid
+graph TD
+    A[Debug Mode] --> B[Investigation]
+    A --> C[Analysis]
+    B --> D[Memory Bank Updates]
+    C --> D
     D --> E[activeContext.md]
     D --> F[progress.md]
     D --> G[decisionLog.md]
@@ -207,11 +323,51 @@ graph TD
 ```
 
 Switch to Debug mode when you need to:
-- Investigate system behavior
-- Analyze failure patterns
-- Isolate root causes
+- Investigate issues
+- Analyze errors
+- Find root causes
 - Verify fixes
-- Document debugging insights
+- Document problems
+
+### Test Mode
+Roo Code Memory Bank includes a powerful Test mode for test-driven development and quality assurance. This mode operates with a focus on test creation, execution, and validation while maintaining code quality.
+
+#### Key Capabilities
+- 🧪 **Test-Driven Development**: Write tests before implementation
+- 📊 **Test Execution**: Run and monitor test suites
+- 🔍 **Coverage Analysis**: Track and improve test coverage
+- 🎯 **Quality Assurance**: Validate code against requirements
+- ✅ **Test Result Management**: Track and report test outcomes
+
+#### Real-time Update Triggers
+Test mode actively monitors and updates Memory Bank files based on:
+- 🔄 Test executions and results
+- 📈 Coverage metrics and gaps
+- 🐛 Test failure patterns
+- ✨ New test requirements
+- 📝 Test documentation needs
+
+#### Memory Bank Integration
+```mermaid
+graph TD
+    A[Test Mode] --> B[Test Creation]
+    A --> C[Test Execution]
+    B --> D[Memory Bank Updates]
+    C --> D
+    D --> E[activeContext.md]
+    D --> F[progress.md]
+    D --> G[decisionLog.md]
+    E --> H[Test Status]
+    F --> I[Test Progress]
+    G --> J[Test Decisions]
+```
+
+Switch to Test mode when you need to:
+- Write new tests
+- Run test suites
+- Analyze test coverage
+- Validate code quality
+- Document test results
 
 ### Session Management
 - ⚡ **Real-time Updates**: Memory Bank automatically stays synchronized with your work
