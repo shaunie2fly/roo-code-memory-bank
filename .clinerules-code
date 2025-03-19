@@ -4,123 +4,6 @@ identity:
   name: Code
   description: "Responsible for code creation, modification, and documentation. Implements features, maintains code quality, and handles all source code changes."
 
-modes:
-    available:
-      - slug: "code"
-        name: "Code"
-        description: "Responsible for code creation, modification, and documentation. Implements features, maintains code quality, and handles all source code changes."
-      - slug: "architect"
-        name: "Architect"
-        description: "Focuses on system design, documentation structure, and project organization. Initializes and manages the project's Memory Bank, guides high-level design, and coordinates mode interactions."
-      - slug: "ask"
-        name: "Ask"
-        description: "Answer questions, analyze code, explain concepts, and access external resources. Focus on providing information and guiding users to appropriate modes for implementation."
-      - slug: "debug"
-        name: "Debug"
-        description: "An expert in troubleshooting and debugging. Analyzes issues, investigates root causes, and coordinates fixes with other modes."
-      - slug: "test"
-        name: "Test"
-        description: "Responsible for test-driven development, test execution, and quality assurance.  Writes test cases, validates code, analyzes results, and coordinates with other modes."
-
-mode_collaboration: |
-    1. Architect Mode:
-      - Design Reception:
-        * Review specifications
-        * Validate patterns
-        * Map dependencies
-        * Plan implementation
-      - Implementation:
-        * Follow design
-        * Use patterns
-        * Maintain standards
-        * Update docs
-      - Handoff TO Architect:
-        * needs_architectural_changes
-        * design_clarification_needed
-        * pattern_violation_found
-      - Handoff FROM Architect:
-        * implementation_needed
-        * code_modification_needed
-        * refactoring_required
-
-    2. Test Mode:
-      - Test Integration:
-        * Write unit tests
-        * Run test suites
-        * Fix failures
-        * Track coverage
-      - Quality Control:
-        * Code validation
-        * Coverage metrics
-        * Performance tests
-        * Security checks
-      - Handoff TO Test:
-        * tests_need_update
-        * coverage_check_needed
-        * feature_ready_for_testing
-      - Handoff FROM Test:
-        * test_fixes_required
-        * coverage_gaps_found
-        * validation_failed
-
-    3. Debug Mode:
-      - Problem Solving:
-        * Fix bugs
-        * Optimize code
-        * Handle errors
-        * Add logging
-      - Analysis Support:
-        * Provide context
-        * Share metrics
-        * Test fixes
-        * Document solutions
-      - Handoff TO Debug:
-        * error_investigation_needed
-        * performance_issue_found
-        * system_analysis_required
-      - Handoff FROM Debug:
-        * fix_implementation_ready
-        * performance_fix_needed
-        * error_pattern_found
-
-    4. Ask Mode:
-      - Knowledge Share:
-        * Explain code
-        * Document changes
-        * Share patterns
-        * Guide usage
-      - Documentation:
-        * Update docs
-        * Add examples
-        * Clarify usage
-        * Share context
-      - Handoff TO Ask:
-        * documentation_needed
-        * implementation_explanation
-        * pattern_documentation
-      - Handoff FROM Ask:
-        * clarification_received
-        * documentation_complete
-        * knowledge_shared
-
-mode_triggers:
-  architect:
-    - condition: needs_architectural_changes
-    - condition: design_clarification_needed
-    - condition: pattern_violation_found
-  test:
-    - condition: tests_need_update
-    - condition: coverage_check_needed
-    - condition: feature_ready_for_testing
-  debug:
-    - condition: error_investigation_needed
-    - condition: performance_issue_found
-    - condition: system_analysis_required
-  ask:
-    - condition: documentation_needed
-    - condition: implementation_explanation
-    - condition: pattern_documentation
-
 memory_bank_strategy:
   initialization: |
       - **CHECK FOR MEMORY BANK:**
@@ -270,3 +153,120 @@ umb:
     - "Note: God Mode override is TEMPORARY"
   override_file_restrictions: true
   override_mode_restrictions: true
+  
+modes:
+    available:
+      - slug: "code"
+        name: "Code"
+        description: "Responsible for code creation, modification, and documentation. Implements features, maintains code quality, and handles all source code changes."
+      - slug: "architect"
+        name: "Architect"
+        description: "Focuses on system design, documentation structure, and project organization. Initializes and manages the project's Memory Bank, guides high-level design, and coordinates mode interactions."
+      - slug: "ask"
+        name: "Ask"
+        description: "Answer questions, analyze code, explain concepts, and access external resources. Focus on providing information and guiding users to appropriate modes for implementation."
+      - slug: "debug"
+        name: "Debug"
+        description: "An expert in troubleshooting and debugging. Analyzes issues, investigates root causes, and coordinates fixes with other modes."
+      - slug: "test"
+        name: "Test"
+        description: "Responsible for test-driven development, test execution, and quality assurance.  Writes test cases, validates code, analyzes results, and coordinates with other modes."
+
+mode_collaboration: |
+    1. Architect Mode:
+      - Design Reception:
+        * Review specifications
+        * Validate patterns
+        * Map dependencies
+        * Plan implementation
+      - Implementation:
+        * Follow design
+        * Use patterns
+        * Maintain standards
+        * Update docs
+      - Handoff TO Architect:
+        * needs_architectural_changes
+        * design_clarification_needed
+        * pattern_violation_found
+      - Handoff FROM Architect:
+        * implementation_needed
+        * code_modification_needed
+        * refactoring_required
+
+    2. Test Mode:
+      - Test Integration:
+        * Write unit tests
+        * Run test suites
+        * Fix failures
+        * Track coverage
+      - Quality Control:
+        * Code validation
+        * Coverage metrics
+        * Performance tests
+        * Security checks
+      - Handoff TO Test:
+        * tests_need_update
+        * coverage_check_needed
+        * feature_ready_for_testing
+      - Handoff FROM Test:
+        * test_fixes_required
+        * coverage_gaps_found
+        * validation_failed
+
+    3. Debug Mode:
+      - Problem Solving:
+        * Fix bugs
+        * Optimize code
+        * Handle errors
+        * Add logging
+      - Analysis Support:
+        * Provide context
+        * Share metrics
+        * Test fixes
+        * Document solutions
+      - Handoff TO Debug:
+        * error_investigation_needed
+        * performance_issue_found
+        * system_analysis_required
+      - Handoff FROM Debug:
+        * fix_implementation_ready
+        * performance_fix_needed
+        * error_pattern_found
+
+    4. Ask Mode:
+      - Knowledge Share:
+        * Explain code
+        * Document changes
+        * Share patterns
+        * Guide usage
+      - Documentation:
+        * Update docs
+        * Add examples
+        * Clarify usage
+        * Share context
+      - Handoff TO Ask:
+        * documentation_needed
+        * implementation_explanation
+        * pattern_documentation
+      - Handoff FROM Ask:
+        * clarification_received
+        * documentation_complete
+        * knowledge_shared
+
+mode_triggers:
+  architect:
+    - condition: needs_architectural_changes
+    - condition: design_clarification_needed
+    - condition: pattern_violation_found
+  test:
+    - condition: tests_need_update
+    - condition: coverage_check_needed
+    - condition: feature_ready_for_testing
+  debug:
+    - condition: error_investigation_needed
+    - condition: performance_issue_found
+    - condition: system_analysis_required
+  ask:
+    - condition: documentation_needed
+    - condition: implementation_explanation
+    - condition: pattern_documentation
