@@ -1,6 +1,6 @@
 <div align="center">
     
-### 🚨Major [Update](https://github.com/GreatScottyMac/RooFlow) Coming Soon!🚨
+### Be sure to give 🚀[RooFlow](https://github.com/GreatScottyMac/RooFlow)🌊 a try!
 
 <br>
 

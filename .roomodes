@@ -7,7 +7,9 @@
       "groups": [
         "read",
         "browser",
-        "command"
+        "command",
+        "edit",
+        "mcp"
       ],
       "source": "project"
     }
